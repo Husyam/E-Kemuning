@@ -19,16 +19,13 @@ class StackHome extends StatelessWidget {
         elevation: 0,
         title: const Text(
           'E-Kemuning',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 24
-          ),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
         ),
-        backgroundColor: Color(0XFF0196FF),
+        backgroundColor: const Color(0XFF0196FF),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.notifications),
+            icon: const Icon(Icons.notifications),
           ),
         ],
       ),
@@ -98,7 +95,7 @@ class StackHome extends StatelessWidget {
                   right: 0,
                   left: 0,
                   child: Padding(
-                    padding: EdgeInsets.only(left: 24),
+                    padding: const EdgeInsets.only(left: 24),
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Column(
@@ -111,7 +108,7 @@ class StackHome extends StatelessWidget {
                                 height: 210,
                                 decoration: BoxDecoration(
                                   //color: Colors.amber,
-                                  image: DecorationImage(
+                                  image: const DecorationImage(
                                     image: AssetImage(
                                         'assets/images/Home Banner2.png'),
                                     fit: BoxFit.cover,
@@ -122,7 +119,7 @@ class StackHome extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(16.0),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 8,
                               ),
                               Container(
@@ -130,7 +127,7 @@ class StackHome extends StatelessWidget {
                                 height: 210,
                                 decoration: BoxDecoration(
                                   //color: Colors.amber,
-                                  image: DecorationImage(
+                                  image: const DecorationImage(
                                     image: AssetImage(
                                         'assets/images/Home Banner.png'),
                                     fit: BoxFit.cover,
@@ -149,19 +146,24 @@ class StackHome extends StatelessWidget {
                   )),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 29 * 3,
             width: double.infinity,
           ),
           Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding: const EdgeInsets.only(
+              top: 29,
+              right: 0,
+              bottom: 0,
+              left: 24,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Row(
                   children: [
                     Container(
-                      child: Text(
+                      child: const Text(
                         'Tentang Kemuning',
                         style: TextStyle(
                           fontSize: 14,
@@ -172,7 +174,7 @@ class StackHome extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 SingleChildScrollView(
@@ -185,7 +187,7 @@ class StackHome extends StatelessWidget {
                             onTap: () async {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return detailsWilayah();
+                                return const detailsWilayah();
                               }));
                             },
                             child: Container(
@@ -337,7 +339,12 @@ class StackHome extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(29.0),
+            padding: const EdgeInsets.only(
+              top: 26,
+              right: 0,
+              bottom: 0,
+              left: 24
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -511,7 +518,12 @@ class StackHome extends StatelessWidget {
             color: Color(0XFFF6F6F6),
           ),
           Padding(
-            padding: const EdgeInsets.all(29.0),
+            padding: const EdgeInsets.only(
+              top: 26,
+              right: 0,
+              bottom: 0,
+              left: 24,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -534,156 +546,250 @@ class StackHome extends StatelessWidget {
                 ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  child: Column(
                     children: [
-                      Column(
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          InkWell(
-                            onTap: () async {
-                              final _call = 'tel:$_phoneNumberPolis';
-                              final _text = 'sms:$_phoneNumberPolis';
-                              if (await canLaunch(_call)) {
-                                await launch(_call);
-                              }
-                            },
-                            child: Container(
-                              width: 83,
-                              height: 83,
-                              padding: EdgeInsets.all(21.0),
-                              decoration: BoxDecoration(
-                                color:
-                                    const Color(0xFF0196FF).withOpacity(0.05),
-                                border: Border.all(
-                                    color: const Color(0xFF0196FF),
-                                    width: 0,
-                                    style: BorderStyle.none),
-                                borderRadius: BorderRadius.circular(24),
-                                //color: Colors.transparent,
-                                shape: BoxShape.rectangle,
+                          Column(
+                            children: [
+                              InkWell(
+                                onTap: () async {
+                                  final _call = 'tel:$_phoneNumberPolis';
+                                  final _text = 'sms:$_phoneNumberPolis';
+                                  if (await canLaunch(_call)) {
+                                    await launch(_call);
+                                  }
+                                },
+                                child: Container(
+                                  width: 83,
+                                  height: 83,
+                                  padding: EdgeInsets.all(21.0),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF0196FF)
+                                        .withOpacity(0.05),
+                                    border: Border.all(
+                                        color: const Color(0xFF0196FF),
+                                        width: 0,
+                                        style: BorderStyle.none),
+                                    borderRadius: BorderRadius.circular(24),
+                                    //color: Colors.transparent,
+                                    shape: BoxShape.rectangle,
+                                  ),
+                                  child: Ink.image(
+                                    image: AssetImage(
+                                        'assets/images/call-calling.png'),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
                               ),
-                              child: Ink.image(
-                                image: AssetImage(
-                                    'assets/images/call-calling.png'),
-                                fit: BoxFit.fill,
+                              SizedBox(
+                                height: 8,
                               ),
-                            ),
+                              Text('Polisi'),
+                            ],
                           ),
                           SizedBox(
-                            height: 8,
+                            width: 16,
                           ),
-                          Text('Polisi'),
+                          Column(
+                            children: [
+                              InkWell(
+                                onTap: () async {
+                                  final _call = 'tel:$_phoneNumber';
+                                  final _text = 'sms:$_phoneNumber';
+                                  if (await canLaunch(_call)) {
+                                    await launch(_call);
+                                  }
+                                },
+                                child: Container(
+                                  width: 83,
+                                  height: 83,
+                                  padding: EdgeInsets.all(21),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF0196FF)
+                                        .withOpacity(0.05),
+                                    border: Border.all(
+                                        color: const Color(0xFF0196FF),
+                                        width: 0,
+                                        style: BorderStyle.none),
+                                    borderRadius: BorderRadius.circular(24),
+                                    //color: Colors.transparent,
+                                    shape: BoxShape.rectangle,
+                                  ),
+                                  child: Ink.image(
+                                    image: AssetImage(
+                                        'assets/images/call-calling.png'),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 8,
+                              ),
+                              Text('Damkar'),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 16,
+                          ),
+                          Column(
+                            children: [
+                              InkWell(
+                                onTap: () {},
+                                child: Container(
+                                  width: 83,
+                                  height: 83,
+                                  padding: EdgeInsets.all(21),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF0196FF)
+                                        .withOpacity(0.05),
+                                    border: Border.all(
+                                        color: const Color(0xFF0196FF),
+                                        width: 0,
+                                        style: BorderStyle.none),
+                                    borderRadius: BorderRadius.circular(24),
+                                    //color: Colors.transparent,
+                                    shape: BoxShape.rectangle,
+                                  ),
+                                  child: Ink.image(
+                                    image: AssetImage(
+                                        'assets/images/call-calling.png'),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 8,
+                              ),
+                              Text('Ambulance'),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 16,
+                          ),
+                          Column(
+                            children: [
+                              InkWell(
+                                onTap: () {},
+                                child: Container(
+                                  width: 83,
+                                  height: 83,
+                                  padding: EdgeInsets.all(21),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF0196FF)
+                                        .withOpacity(0.05),
+                                    border: Border.all(
+                                        color: const Color(0xFF0196FF),
+                                        width: 0,
+                                        style: BorderStyle.none),
+                                    borderRadius: BorderRadius.circular(24),
+                                    //color: Colors.transparent,
+                                    shape: BoxShape.rectangle,
+                                  ),
+                                  child: Ink.image(
+                                    image: AssetImage(
+                                        'assets/images/call-calling.png'),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 8,
+                              ),
+                              Text('Darurat 112'),
+                            ],
+                          ),
                         ],
                       ),
                       SizedBox(
-                        width: 16,
+                        height: 16,
                       ),
-                      Column(
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          InkWell(
-                            onTap: () async {
-                              final _call = 'tel:$_phoneNumber';
-                              final _text = 'sms:$_phoneNumber';
-                              if (await canLaunch(_call)) {
-                                await launch(_call);
-                              }
-                            },
-                            child: Container(
-                              width: 83,
-                              height: 83,
-                              padding: EdgeInsets.all(21),
-                              decoration: BoxDecoration(
-                                color:
-                                    const Color(0xFF0196FF).withOpacity(0.05),
-                                border: Border.all(
-                                    color: const Color(0xFF0196FF),
-                                    width: 0,
-                                    style: BorderStyle.none),
-                                borderRadius: BorderRadius.circular(24),
-                                //color: Colors.transparent,
-                                shape: BoxShape.rectangle,
+                          Column(
+                            children: [
+                              InkWell(
+                                onTap: () async {
+                                  final _call = 'tel:$_phoneNumberPolis';
+                                  final _text = 'sms:$_phoneNumberPolis';
+                                  if (await canLaunch(_call)) {
+                                    await launch(_call);
+                                  }
+                                },
+                                child: Container(
+                                  width: 83,
+                                  height: 83,
+                                  padding: EdgeInsets.all(21.0),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF0196FF)
+                                        .withOpacity(0.05),
+                                    border: Border.all(
+                                        color: const Color(0xFF0196FF),
+                                        width: 0,
+                                        style: BorderStyle.none),
+                                    borderRadius: BorderRadius.circular(24),
+                                    //color: Colors.transparent,
+                                    shape: BoxShape.rectangle,
+                                  ),
+                                  child: Ink.image(
+                                    image: AssetImage(
+                                        'assets/images/call-calling.png'),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
                               ),
-                              child: Ink.image(
-                                image: AssetImage(
-                                    'assets/images/call-calling.png'),
-                                fit: BoxFit.fill,
+                              SizedBox(
+                                height: 8,
                               ),
-                            ),
+                              Text('Polisi'),
+                            ],
                           ),
                           SizedBox(
-                            height: 8,
+                            width: 16,
                           ),
-                          Text('Damkar'),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 16,
-                      ),
-                      Column(
-                        children: [
-                          InkWell(
-                            onTap: () {},
-                            child: Container(
-                              width: 83,
-                              height: 83,
-                              padding: EdgeInsets.all(21),
-                              decoration: BoxDecoration(
-                                color:
-                                    const Color(0xFF0196FF).withOpacity(0.05),
-                                border: Border.all(
-                                    color: const Color(0xFF0196FF),
-                                    width: 0,
-                                    style: BorderStyle.none),
-                                borderRadius: BorderRadius.circular(24),
-                                //color: Colors.transparent,
-                                shape: BoxShape.rectangle,
+                          Column(
+                            children: [
+                              InkWell(
+                                onTap: () async {
+                                  final _call = 'tel:$_phoneNumber';
+                                  final _text = 'sms:$_phoneNumber';
+                                  if (await canLaunch(_call)) {
+                                    await launch(_call);
+                                  }
+                                },
+                                child: Container(
+                                  width: 83,
+                                  height: 83,
+                                  padding: EdgeInsets.all(21),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF0196FF)
+                                        .withOpacity(0.05),
+                                    border: Border.all(
+                                        color: const Color(0xFF0196FF),
+                                        width: 0,
+                                        style: BorderStyle.none),
+                                    borderRadius: BorderRadius.circular(24),
+                                    //color: Colors.transparent,
+                                    shape: BoxShape.rectangle,
+                                  ),
+                                  child: Ink.image(
+                                    image: AssetImage(
+                                        'assets/images/call-calling.png'),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
                               ),
-                              child: Ink.image(
-                                image: AssetImage(
-                                    'assets/images/call-calling.png'),
-                                fit: BoxFit.fill,
+                              SizedBox(
+                                height: 8,
                               ),
-                            ),
+                              Text('Damkar'),
+                            ],
                           ),
                           SizedBox(
-                            height: 8,
+                            width: 16,
                           ),
-                          Text('Ambulance'),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 16,
-                      ),
-                      Column(
-                        children: [
-                          InkWell(
-                            onTap: () {},
-                            child: Container(
-                              width: 83,
-                              height: 83,
-                              padding: EdgeInsets.all(21),
-                              decoration: BoxDecoration(
-                                color:
-                                    const Color(0xFF0196FF).withOpacity(0.05),
-                                border: Border.all(
-                                    color: const Color(0xFF0196FF),
-                                    width: 0,
-                                    style: BorderStyle.none),
-                                borderRadius: BorderRadius.circular(24),
-                                //color: Colors.transparent,
-                                shape: BoxShape.rectangle,
-                              ),
-                              child: Ink.image(
-                                image: AssetImage(
-                                    'assets/images/call-calling.png'),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text('Darurat 112'),
                         ],
                       ),
                     ],
@@ -692,8 +798,375 @@ class StackHome extends StatelessWidget {
               ],
             ),
           ),
+          Divider(
+            height: 16,
+            thickness: 10,
+            indent: 0,
+            endIndent: 0,
+            color: Color(0XFFF6F6F6),
+          ),
           Padding(
-            padding: const EdgeInsets.all(29.0),
+            padding: const EdgeInsets.only(
+              top: 26,
+              right: 24,
+              bottom: 0,
+              left: 24,
+            ),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: [
+                    Text(
+                      'UMKM',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/Kerajinan.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  'Kerajinan',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/Kuliner.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  'Kuliner',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/argi.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: const Text(
+                                  'Agribisnis',
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          // SizedBox(height: 0,),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 16,
+              right: 24,
+              bottom: 0,
+              left: 24,
+            ),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: [
+                    Text(
+                      'UMKM',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/Kerajinan.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  'Kerajinan',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/Kuliner.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  'Kuliner',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/argi.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: const Text(
+                                  'Agribisnis',
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 16,
+              right: 24,
+              bottom: 0,
+              left: 24,
+            ),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: [
+                    Text(
+                      'UMKM',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/Kerajinan.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  'Kerajinan',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/Kuliner.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  'Kuliner',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/argi.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: const Text(
+                                  'Agribisnis',
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 16,
+              right: 24,
+              bottom: 0,
+              left: 24,
+            ),
             child: Column(
               children: <Widget>[
                 Row(
