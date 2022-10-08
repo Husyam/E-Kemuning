@@ -1,10 +1,14 @@
+import 'package:e_kemuning/Pages/Kelurahan_detail.dart';
 import 'package:flutter/material.dart';
 
 //import 'package:e_kemuning/Home.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:e_kemuning/Pages/detail_wilayah.dart';
-import 'package:e_kemuning/Pages/coming.dart';
+import 'package:e_kemuning/Pages/kelurahan';
+import 'package:e_kemuning/list_data.dart';
+
+import 'Pages/Lisview_activitiy.dart';
 
 class StackHome extends StatelessWidget {
   const StackHome({Key? key}) : super(key: key);
@@ -45,49 +49,6 @@ class StackHome extends StatelessWidget {
                   ),
                 ],
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.start,
-              //   mainAxisSize: MainAxisSize.min,
-              //   children: <Widget>[
-              //     Padding(
-              //       padding: EdgeInsets.all(20),
-              //       child: Row(
-              //         children: [
-              //           Column(
-              //             children: [
-              //               const Text(
-              //                 'E-Kemuning',
-              //                 textAlign: TextAlign.left,
-              //                 style: TextStyle(
-              //                   fontSize: 24,
-              //                   color: Colors.white,
-              //                   fontWeight: FontWeight.bold,
-              //                   fontFamily: 'Poppins',
-              //                 ),
-              //               ),
-              //             ],
-              //           ),
-              //           Icon(
-              //             Icons.notification_important,
-              //             color: Colors.white,
-              //           ),
-              //           // SizedBox(
-              //           //   width: 1
-              //           // ),
-              //           // Column(
-              //           //   crossAxisAlignment: CrossAxisAlignment.end,
-              //           //   children: [
-              //           //     Icon(
-              //           //       Icons.notification_important,
-              //           //       color: Colors.white,
-              //           //     ),
-              //           //   ],
-              //           // ),
-              //         ],
-              //       ),
-              //     ),
-              //   ],
-              // ),
               Positioned(
                   // top: 150,
                   // left: 24,
@@ -226,7 +187,8 @@ class StackHome extends StatelessWidget {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return comingSoon();
+                                    // return detailskelurahan();
+                                    return LisViewActivity(title: 'Data List Kemuning',);
                               }));
                             },
                             child: Container(
@@ -358,6 +320,26 @@ class StackHome extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontFamily: 'Poppins',
                         ),
+                      ),
+                    ),
+                    SizedBox(width: 8,),
+                    Container(
+                      padding: EdgeInsets.only(top: 2,right: 6,bottom: 2,left: 6),
+                      child: Text(
+                        'Segera Hadir',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 8,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(24),
+                        //color: Colors.transparent,
+                        shape: BoxShape.rectangle,
                       ),
                     ),
                   ],
