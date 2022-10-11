@@ -33,7 +33,6 @@ class LisViewActivity extends StatelessWidget {
               child: DatalListTitle(data),
             ),
           );
-
         });
   }
 }

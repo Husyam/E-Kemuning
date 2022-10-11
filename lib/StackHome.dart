@@ -99,6 +99,28 @@ class StackHome extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(16.0),
                                 ),
                               ),
+                              const SizedBox(
+                                width: 8,
+                              ),
+                              Container(
+                                width: 380,
+                                height: 210,
+                                decoration: BoxDecoration(
+                                  //color: Colors.amber,
+                                  image: const DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/banner 3.png'),
+                                    fit: BoxFit.cover,
+                                  ),
+                                  // border: Border.all(
+                                  //   width: 1,
+                                  // ),
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 8,
+                              ),
                             ],
                           ),
                         ],
@@ -187,8 +209,8 @@ class StackHome extends StatelessWidget {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                    // return detailskelurahan();
-                                    return LisViewActivity(title: 'Data List Kemuning',);
+                                return detailskelurahan();
+                                // return LisViewActivity(title: 'Data List Kemuning',);
                               }));
                             },
                             child: Container(
@@ -294,6 +316,42 @@ class StackHome extends StatelessWidget {
                           Text('Program Kasih'),
                         ],
                       ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Column(
+                        children: [
+                          InkWell(
+                            onTap: () {},
+                            child: Container(
+                              width: 83,
+                              height: 83,
+                              padding: EdgeInsets.all(21.0),
+                              decoration: BoxDecoration(
+                                color:
+                                    const Color(0xFF0196FF).withOpacity(0.05),
+                                border: Border.all(
+                                    color: const Color(0xFF0196FF),
+                                    width: 0,
+                                    style: BorderStyle.none),
+                                borderRadius: BorderRadius.circular(24),
+                                //color: Colors.transparent,
+                                shape: BoxShape.rectangle,
+                              ),
+                              child: Ink.image(
+                                image: AssetImage('assets/images/people.png'),
+                                height: 40,
+                                width: 40,
+                                //fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text('Tim Kecamatan'),
+                        ],
+                      ),
                     ],
                   ),
                 ),
@@ -301,12 +359,8 @@ class StackHome extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(
-              top: 26,
-              right: 0,
-              bottom: 0,
-              left: 24
-            ),
+            padding:
+                const EdgeInsets.only(top: 26, right: 0, bottom: 0, left: 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -322,9 +376,12 @@ class StackHome extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(width: 8,),
+                    SizedBox(
+                      width: 8,
+                    ),
                     Container(
-                      padding: EdgeInsets.only(top: 2,right: 6,bottom: 2,left: 6),
+                      padding:
+                          EdgeInsets.only(top: 2, right: 6, bottom: 2, left: 6),
                       child: Text(
                         'Segera Hadir',
                         textAlign: TextAlign.center,
@@ -492,6 +549,7 @@ class StackHome extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: 24.0,),
           Divider(
             height: 16,
             thickness: 10,
@@ -554,7 +612,7 @@ class StackHome extends StatelessWidget {
                                         color: const Color(0xFF0196FF),
                                         width: 0,
                                         style: BorderStyle.none),
-                                    borderRadius: BorderRadius.circular(24),
+                                    borderRadius: BorderRadius.circular(24.0),
                                     //color: Colors.transparent,
                                     shape: BoxShape.rectangle,
                                   ),
@@ -725,7 +783,7 @@ class StackHome extends StatelessWidget {
                               SizedBox(
                                 height: 8,
                               ),
-                              Text('Polisi'),
+                              Text('Darurat 119'),
                             ],
                           ),
                           SizedBox(
@@ -766,14 +824,12 @@ class StackHome extends StatelessWidget {
                               SizedBox(
                                 height: 8,
                               ),
-                              Text('Damkar'),
+                              Text('DLLAJ'),
                             ],
-                          ),
-                          SizedBox(
-                            width: 16,
                           ),
                         ],
                       ),
+                      SizedBox(height: 24.0,),
                     ],
                   ),
                 ),
@@ -877,7 +933,7 @@ class StackHome extends StatelessWidget {
                         child: InkWell(
                           onTap: () {},
                           child: Ink.image(
-                            image: AssetImage('assets/images/argi.png'),
+                            image: AssetImage('assets/images/fashion.png'),
                             height: 150,
                             width: 180,
                             fit: BoxFit.cover,
@@ -886,99 +942,9 @@ class StackHome extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: const Text(
-                                  'Agribisnis',
+                                  'Fashion',
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          // SizedBox(height: 0,),
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 16,
-              right: 24,
-              bottom: 0,
-              left: 24,
-            ),
-            child: Column(
-              children: <Widget>[
-                Row(
-                  children: [
-                    Text(
-                      'UMKM',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 16,
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Container(
-                        child: InkWell(
-                          onTap: () {},
-                          child: Ink.image(
-                            image: AssetImage('assets/images/Kerajinan.png'),
-                            height: 150,
-                            width: 180,
-                            fit: BoxFit.cover,
-                            child: Align(
-                              alignment: Alignment.bottomLeft,
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Text(
-                                  'Kerajinan',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 16,
-                      ),
-                      Container(
-                        child: InkWell(
-                          onTap: () {},
-                          child: Ink.image(
-                            image: AssetImage('assets/images/Kuliner.png'),
-                            height: 150,
-                            width: 180,
-                            fit: BoxFit.cover,
-                            child: Align(
-                              alignment: Alignment.bottomLeft,
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Text(
-                                  'Kuliner',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.normal,
                                     color: Colors.white,
@@ -1024,6 +990,7 @@ class StackHome extends StatelessWidget {
               ],
             ),
           ),
+          // SizedBox(height: 0,),
           Padding(
             padding: const EdgeInsets.only(
               top: 16,
@@ -1036,7 +1003,7 @@ class StackHome extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      'UMKM',
+                      'Pendidikan',
                       style: TextStyle(
                         fontSize: 14,
                         fontFamily: 'Poppins',
@@ -1055,8 +1022,64 @@ class StackHome extends StatelessWidget {
                       Container(
                         child: InkWell(
                           onTap: () {},
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24.0),
+                              shape: BoxShape.rectangle,
+                            ),
+                            child: Ink.image(
+                              image: AssetImage('assets/images/sd.png'),
+                              height: 150,
+                              width: 180,
+                              fit: BoxFit.cover,
+                              child: Align(
+                                alignment: Alignment.bottomLeft,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Text(
+                                    'SD',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          // child: Ink.image(
+                          //   image: AssetImage('assets/images/sd.png'),
+                          //   height: 150,
+                          //   width: 180,
+                          //   fit: BoxFit.cover,
+                          //   child: Align(
+                          //     alignment: Alignment.bottomLeft,
+                          //     child: Padding(
+                          //       padding: const EdgeInsets.all(16.0),
+                          //       child: Text(
+                          //         'SD',
+                          //         textAlign: TextAlign.center,
+                          //         style: TextStyle(
+                          //           fontSize: 12,
+                          //           fontWeight: FontWeight.normal,
+                          //           color: Colors.white,
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
                           child: Ink.image(
-                            image: AssetImage('assets/images/Kerajinan.png'),
+                            image: AssetImage('assets/images/smp.png'),
                             height: 150,
                             width: 180,
                             fit: BoxFit.cover,
@@ -1065,7 +1088,7 @@ class StackHome extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: Text(
-                                  'Kerajinan',
+                                  'SMP',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontSize: 12,
@@ -1085,36 +1108,7 @@ class StackHome extends StatelessWidget {
                         child: InkWell(
                           onTap: () {},
                           child: Ink.image(
-                            image: AssetImage('assets/images/Kuliner.png'),
-                            height: 150,
-                            width: 180,
-                            fit: BoxFit.cover,
-                            child: Align(
-                              alignment: Alignment.bottomLeft,
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Text(
-                                  'Kuliner',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 16,
-                      ),
-                      Container(
-                        child: InkWell(
-                          onTap: () {},
-                          child: Ink.image(
-                            image: AssetImage('assets/images/argi.png'),
+                            image: AssetImage('assets/images/sma.png'),
                             height: 150,
                             width: 180,
                             fit: BoxFit.cover,
@@ -1123,7 +1117,36 @@ class StackHome extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: const Text(
-                                  'Agribisnis',
+                                  'SMA',
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/universitas.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: const Text(
+                                  'UNIVERSITAS',
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(
                                     fontSize: 12,
@@ -1154,7 +1177,7 @@ class StackHome extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      'UMKM',
+                      'Darurat',
                       style: TextStyle(
                         fontSize: 14,
                         fontFamily: 'Poppins',
@@ -1174,7 +1197,7 @@ class StackHome extends StatelessWidget {
                         child: InkWell(
                           onTap: () {},
                           child: Ink.image(
-                            image: AssetImage('assets/images/Kerajinan.png'),
+                            image: AssetImage('assets/images/rumah sakit.png'),
                             height: 150,
                             width: 180,
                             fit: BoxFit.cover,
@@ -1183,7 +1206,7 @@ class StackHome extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: Text(
-                                  'Kerajinan',
+                                  'Rumah Sakit',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontSize: 12,
@@ -1203,7 +1226,7 @@ class StackHome extends StatelessWidget {
                         child: InkWell(
                           onTap: () {},
                           child: Ink.image(
-                            image: AssetImage('assets/images/Kuliner.png'),
+                            image: AssetImage('assets/images/Puskesmas.png'),
                             height: 150,
                             width: 180,
                             fit: BoxFit.cover,
@@ -1212,7 +1235,7 @@ class StackHome extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: Text(
-                                  'Kuliner',
+                                  'Puskesmas',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontSize: 12,
@@ -1232,7 +1255,7 @@ class StackHome extends StatelessWidget {
                         child: InkWell(
                           onTap: () {},
                           child: Ink.image(
-                            image: AssetImage('assets/images/argi.png'),
+                            image: AssetImage('assets/images/klinik.png'),
                             height: 150,
                             width: 180,
                             fit: BoxFit.cover,
@@ -1241,7 +1264,155 @@ class StackHome extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: const Text(
-                                  'Agribisnis',
+                                  'Klinik',
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/apotek.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: const Text(
+                                  'Apotik',
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 16,
+              right: 24,
+              bottom: 0,
+              left: 24,
+            ),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: [
+                    Text(
+                      'Pelatihan',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/pembelajaran.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  'Pembelajaran',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image:
+                                AssetImage('assets/images/acara pemerinta.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  'Acara Pemerintah',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/masyarakat.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: const Text(
+                                  'Acara Masyarakat',
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(
                                     fontSize: 12,
