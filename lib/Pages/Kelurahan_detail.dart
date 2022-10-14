@@ -1,7 +1,7 @@
-import 'package:e_kemuning/Pages/Lisview_activitiy.dart';
 import 'package:flutter/material.dart';
 import 'package:e_kemuning/./StackHome.dart';
-import 'package:e_kemuning/Pages/locationMaps.dart';
+import 'location_maps.dart';
+import 'ario_kemuning.dart';
 
 class detailskelurahan extends StatelessWidget {
   const detailskelurahan({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class detailskelurahan extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.black, //change your color here
         ),
         centerTitle: true,
@@ -32,20 +32,19 @@ class detailskelurahan extends StatelessWidget {
       ),
       body: SafeArea(
         child: ListView(
-          padding: EdgeInsets.only(
-            top: 0,
-            right: 24.0,
-            left: 24.0,
-          ),
           children: <Widget>[
             Column(
               children: [
                 Container(
-                  width: 380,
+                  padding: EdgeInsets.only(
+                    right: 24.0,
+                    left: 24.0
+                  ),
+
                   // height: 250,
                   child: Image.asset('assets/images/Kelurahan.png'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 24,
                 ),
                 Card(
@@ -60,7 +59,7 @@ class detailskelurahan extends StatelessWidget {
                           '1,413 Orang',
                           style: TextStyle(color: Colors.black.withOpacity(0.6)),
                         ),
-                          trailing: Icon(
+                          trailing: const Icon(
                             Icons.arrow_forward_ios_outlined,
                             size: 24.0,
                             color: Colors.blue,
@@ -75,14 +74,19 @@ class detailskelurahan extends StatelessWidget {
                   child: Column(
                     children: [
                       ListTile(
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                                return const KelArio();
+                              }));
+                        },
                         //leading: Icon(Icons.arrow_drop_down_circle),
                           title: const Text('Kel Ario Kemuning'),
                           subtitle: Text(
                             '2,441 Orang',
                             style: TextStyle(color: Colors.black.withOpacity(0.6)),
                           ),
-                          trailing: Icon(
+                          trailing: const Icon(
                             Icons.arrow_forward_ios_outlined,
                             size: 24.0,
                             color: Colors.blue,
@@ -103,7 +107,7 @@ class detailskelurahan extends StatelessWidget {
                             '2,523 Orang',
                             style: TextStyle(color: Colors.black.withOpacity(0.6)),
                           ),
-                          trailing: Icon(
+                          trailing: const Icon(
                             Icons.arrow_forward_ios_outlined,
                             size: 24.0,
                             color: Colors.blue,
@@ -124,7 +128,7 @@ class detailskelurahan extends StatelessWidget {
                             '1,231 Orang',
                             style: TextStyle(color: Colors.black.withOpacity(0.6)),
                           ),
-                          trailing: Icon(
+                          trailing: const Icon(
                             Icons.arrow_forward_ios_outlined,
                             size: 24.0,
                             color: Colors.blue,
@@ -145,7 +149,7 @@ class detailskelurahan extends StatelessWidget {
                             '3,421 Orang',
                             style: TextStyle(color: Colors.black.withOpacity(0.6)),
                           ),
-                          trailing: Icon(
+                          trailing: const Icon(
                             Icons.arrow_forward_ios_outlined,
                             size: 24.0,
                             color: Colors.blue,
@@ -166,7 +170,7 @@ class detailskelurahan extends StatelessWidget {
                             '1,773 Orang',
                             style: TextStyle(color: Colors.black.withOpacity(0.6)),
                           ),
-                          trailing: Icon(
+                          trailing: const Icon(
                             Icons.arrow_forward_ios_outlined,
                             size: 24.0,
                             color: Colors.blue,

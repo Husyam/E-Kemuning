@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:e_kemuning/./StackHome.dart';
-import 'package:e_kemuning/Pages/locationMaps.dart';
+import 'package:e_kemuning/Pages/location_maps.dart';
 
 class detailsWilayah extends StatelessWidget {
   const detailsWilayah({Key? key}) : super(key: key);
