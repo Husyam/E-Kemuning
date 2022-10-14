@@ -144,15 +144,13 @@ class StackHome extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Row(
-                  children: [
-                    Container(
-                      child: const Text(
-                        'Tentang Kemuning',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Poppins',
-                        ),
+                  children: const [
+                    Text(
+                      'Tentang Kemuning',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Poppins',
                       ),
                     ),
                   ],
@@ -176,7 +174,7 @@ class StackHome extends StatelessWidget {
                             child: Container(
                               width: 83,
                               height: 83,
-                              padding: EdgeInsets.all(20.0),
+                              padding: const EdgeInsets.all(20.0),
                               decoration: BoxDecoration(
                                 color:
                                     const Color(0xFF0196FF).withOpacity(0.05),
@@ -189,18 +187,18 @@ class StackHome extends StatelessWidget {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Ink.image(
-                                image: AssetImage('assets/images/map.png'),
+                                image: const AssetImage('assets/images/map.png'),
                                 //fit: BoxFit.fill,
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
-                          Text('Wilayah'),
+                          const Text('Wilayah'),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 16,
                       ),
                       Column(
@@ -209,14 +207,14 @@ class StackHome extends StatelessWidget {
                             onTap: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return detailskelurahan();
+                                return const detailskelurahan();
                                 // return LisViewActivity(title: 'Data List Kemuning',);
                               }));
                             },
                             child: Container(
                               width: 83,
                               height: 83,
-                              padding: EdgeInsets.all(21.0),
+                              padding: const EdgeInsets.all(21.0),
                               decoration: BoxDecoration(
                                 color:
                                     const Color(0xFF0196FF).withOpacity(0.05),
@@ -229,7 +227,7 @@ class StackHome extends StatelessWidget {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Ink.image(
-                                image: AssetImage(
+                                image: const AssetImage(
                                     'assets/images/personalcard.png'),
                                 height: 40,
                                 width: 40,
@@ -237,13 +235,13 @@ class StackHome extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
-                          Text('Kelurahan'),
+                          const Text('Kelurahan'),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 16,
                       ),
                       Column(
@@ -253,7 +251,7 @@ class StackHome extends StatelessWidget {
                             child: Container(
                               width: 83,
                               height: 83,
-                              padding: EdgeInsets.all(21.0),
+                              padding: const EdgeInsets.all(21.0),
                               decoration: BoxDecoration(
                                 color:
                                     const Color(0xFF0196FF).withOpacity(0.05),
@@ -267,20 +265,20 @@ class StackHome extends StatelessWidget {
                               ),
                               child: Ink.image(
                                 image:
-                                    AssetImage('assets/images/status-up.png'),
+                                    const AssetImage('assets/images/status-up.png'),
                                 height: 40,
                                 width: 40,
                                 //fit: BoxFit.fill,
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
-                          Text('Potensi'),
+                          const Text('Potensi'),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 16,
                       ),
                       Column(
@@ -290,7 +288,7 @@ class StackHome extends StatelessWidget {
                             child: Container(
                               width: 83,
                               height: 83,
-                              padding: EdgeInsets.all(21.0),
+                              padding: const EdgeInsets.all(21.0),
                               decoration: BoxDecoration(
                                 color:
                                     const Color(0xFF0196FF).withOpacity(0.05),
@@ -303,20 +301,20 @@ class StackHome extends StatelessWidget {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Ink.image(
-                                image: AssetImage('assets/images/lovely.png'),
+                                image: const AssetImage('assets/images/lovely.png'),
                                 height: 40,
                                 width: 40,
                                 //fit: BoxFit.fill,
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
-                          Text('Program Kasih'),
+                          const Text('Program Kasih'),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 16,
                       ),
                       Column(
@@ -326,7 +324,7 @@ class StackHome extends StatelessWidget {
                             child: Container(
                               width: 83,
                               height: 83,
-                              padding: EdgeInsets.all(21.0),
+                              padding: const EdgeInsets.all(21.0),
                               decoration: BoxDecoration(
                                 color:
                                     const Color(0xFF0196FF).withOpacity(0.05),
@@ -339,17 +337,17 @@ class StackHome extends StatelessWidget {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Ink.image(
-                                image: AssetImage('assets/images/people.png'),
+                                image: const AssetImage('assets/images/people.png'),
                                 height: 40,
                                 width: 40,
                                 //fit: BoxFit.fill,
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
-                          Text('Tim Kecamatan'),
+                          const Text('Tim Kecamatan'),
                         ],
                       ),
                     ],
@@ -366,23 +364,27 @@ class StackHome extends StatelessWidget {
               children: <Widget>[
                 Row(
                   children: [
-                    Container(
-                      child: Text(
-                        'Layanan Publik',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Poppins',
-                        ),
+                    const Text(
+                      'Layanan Publik',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Poppins',
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 8,
                     ),
                     Container(
                       padding:
-                          EdgeInsets.only(top: 2, right: 6, bottom: 2, left: 6),
-                      child: Text(
+                          const EdgeInsets.only(top: 2, right: 6, bottom: 2, left: 6),
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(24),
+                        //color: Colors.transparent,
+                        shape: BoxShape.rectangle,
+                      ),
+                      child: const Text(
                         'Segera Hadir',
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -392,16 +394,10 @@ class StackHome extends StatelessWidget {
                           fontFamily: 'Poppins',
                         ),
                       ),
-                      decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(24),
-                        //color: Colors.transparent,
-                        shape: BoxShape.rectangle,
-                      ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 SingleChildScrollView(
@@ -416,7 +412,7 @@ class StackHome extends StatelessWidget {
                             child: Container(
                               width: 83,
                               height: 83,
-                              padding: EdgeInsets.all(21),
+                              padding: const EdgeInsets.all(21),
                               decoration: BoxDecoration(
                                 color:
                                     const Color(0xFF0196FF).withOpacity(0.05),
@@ -429,18 +425,18 @@ class StackHome extends StatelessWidget {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Ink.image(
-                                image: AssetImage('assets/images/alarm.png'),
+                                image: const AssetImage('assets/images/alarm.png'),
                                 fit: BoxFit.fill,
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
-                          Text('Pengaduan'),
+                          const Text('Pengaduan'),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 16,
                       ),
                       Column(
@@ -450,7 +446,7 @@ class StackHome extends StatelessWidget {
                             child: Container(
                               width: 83,
                               height: 83,
-                              padding: EdgeInsets.all(21),
+                              padding: const EdgeInsets.all(21),
                               decoration: BoxDecoration(
                                 color:
                                     const Color(0xFF0196FF).withOpacity(0.05),
@@ -463,18 +459,18 @@ class StackHome extends StatelessWidget {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Ink.image(
-                                image: AssetImage('assets/images/note-2.png'),
+                                image: const AssetImage('assets/images/note-2.png'),
                                 fit: BoxFit.fill,
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
-                          Text('Persuratan'),
+                          const Text('Persuratan'),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 16,
                       ),
                       Column(
@@ -484,7 +480,7 @@ class StackHome extends StatelessWidget {
                             child: Container(
                               width: 83,
                               height: 83,
-                              padding: EdgeInsets.all(21),
+                              padding: const EdgeInsets.all(21),
                               decoration: BoxDecoration(
                                 color:
                                     const Color(0xFF0196FF).withOpacity(0.05),
@@ -498,18 +494,18 @@ class StackHome extends StatelessWidget {
                               ),
                               child: Ink.image(
                                 image:
-                                    AssetImage('assets/images/shield-tick.png'),
+                                    const AssetImage('assets/images/shield-tick.png'),
                                 fit: BoxFit.fill,
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
-                          Text('Peizinan'),
+                          const Text('Peizinan'),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 16,
                       ),
                       Column(
@@ -519,7 +515,7 @@ class StackHome extends StatelessWidget {
                             child: Container(
                               width: 83,
                               height: 83,
-                              padding: EdgeInsets.all(21),
+                              padding: const EdgeInsets.all(21),
                               decoration: BoxDecoration(
                                 color:
                                     const Color(0xFF0196FF).withOpacity(0.05),
@@ -532,15 +528,15 @@ class StackHome extends StatelessWidget {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Ink.image(
-                                image: AssetImage('assets/images/medal.png'),
+                                image: const AssetImage('assets/images/medal.png'),
                                 fit: BoxFit.fill,
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
-                          Text('Program'),
+                          const Text('Program'),
                         ],
                       ),
                     ],
@@ -549,8 +545,8 @@ class StackHome extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 24.0,),
-          Divider(
+          const SizedBox(height: 24.0,),
+          const Divider(
             height: 16,
             thickness: 10,
             indent: 0,
@@ -568,20 +564,18 @@ class StackHome extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Row(
-                  children: [
-                    Container(
-                      child: Text(
-                        'Nomor Penting',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Poppins',
-                        ),
+                  children: const [
+                    Text(
+                      'Nomor Penting',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Poppins',
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 SingleChildScrollView(
@@ -595,16 +589,16 @@ class StackHome extends StatelessWidget {
                             children: [
                               InkWell(
                                 onTap: () async {
-                                  final _call = 'tel:$_phoneNumberPolis';
-                                  final _text = 'sms:$_phoneNumberPolis';
-                                  if (await canLaunch(_call)) {
-                                    await launch(_call);
+                                  final call = 'tel:$_phoneNumberPolis';
+                                  final text = 'sms:$_phoneNumberPolis';
+                                  if (await canLaunch(call)) {
+                                    await launch(call);
                                   }
                                 },
                                 child: Container(
                                   width: 83,
                                   height: 83,
-                                  padding: EdgeInsets.all(21.0),
+                                  padding: const EdgeInsets.all(21.0),
                                   decoration: BoxDecoration(
                                     color: const Color(0xFF0196FF)
                                         .withOpacity(0.05),
@@ -617,16 +611,16 @@ class StackHome extends StatelessWidget {
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Ink.image(
-                                    image: AssetImage(
+                                    image: const AssetImage(
                                         'assets/images/call-calling.png'),
                                     fit: BoxFit.fill,
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 8,
                               ),
-                              Text('Polisi'),
+                              const Text('Polisi'),
                             ],
                           ),
                           SizedBox(

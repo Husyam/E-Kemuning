@@ -38,35 +38,6 @@ class detailskelurahan extends StatelessWidget {
             left: 24.0,
           ),
           children: <Widget>[
-            // Column(
-            //   // mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     Container(
-            //       child: Row(
-            //         children: [
-            //           Container(
-            //             child: IconButton(
-            //               icon: const Icon(
-            //                 Icons.arrow_back,
-            //                 color: Colors.black,
-            //               ),
-            //               onPressed: () {
-            //                 Navigator.pop(context);
-            //               },
-            //             ),
-            //           ),
-            //           Container(
-            //             margin: EdgeInsets.only(left: 102),
-            //             child: const Text('Wilayah'),
-            //           ),
-            //         ],
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            // SizedBox(
-            //   height: 16,
-            // ),
             Column(
               children: [
                 Container(
@@ -76,6 +47,133 @@ class detailskelurahan extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 24,
+                ),
+                Card(
+                  elevation: 0.5,
+                  clipBehavior: Clip.antiAlias,
+                  child: Column(
+                    children: [
+                      ListTile(
+                        //leading: Icon(Icons.arrow_drop_down_circle),
+                        title: const Text('Kel 20 Ilir D II'),
+                        subtitle: Text(
+                          '1,413 Orang',
+                          style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                        ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            size: 24.0,
+                            color: Colors.blue,
+                          )
+                      ),
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 0.5,
+                  clipBehavior: Clip.antiAlias,
+                  child: Column(
+                    children: [
+                      ListTile(
+                        onTap: (){},
+                        //leading: Icon(Icons.arrow_drop_down_circle),
+                          title: const Text('Kel Ario Kemuning'),
+                          subtitle: Text(
+                            '2,441 Orang',
+                            style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                          ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            size: 24.0,
+                            color: Colors.blue,
+                          )
+                      ),
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 0.5,
+                  clipBehavior: Clip.antiAlias,
+                  child: Column(
+                    children: [
+                      ListTile(
+                        //leading: Icon(Icons.arrow_drop_down_circle),
+                          title: const Text('Kel Pahlawan'),
+                          subtitle: Text(
+                            '2,523 Orang',
+                            style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                          ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            size: 24.0,
+                            color: Colors.blue,
+                          )
+                      ),
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 0.5,
+                  clipBehavior: Clip.antiAlias,
+                  child: Column(
+                    children: [
+                      ListTile(
+                        //leading: Icon(Icons.arrow_drop_down_circle),
+                          title: const Text('Kel Pipa Reja'),
+                          subtitle: Text(
+                            '1,231 Orang',
+                            style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                          ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            size: 24.0,
+                            color: Colors.blue,
+                          )
+                      ),
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 0.5,
+                  clipBehavior: Clip.antiAlias,
+                  child: Column(
+                    children: [
+                      ListTile(
+                        //leading: Icon(Icons.arrow_drop_down_circle),
+                          title: const Text('Kel Sekip Jaya'),
+                          subtitle: Text(
+                            '3,421 Orang',
+                            style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                          ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            size: 24.0,
+                            color: Colors.blue,
+                          )
+                      ),
+                    ],
+                  ),
+                ),
+                Card(
+                  elevation: 0.5,
+                  clipBehavior: Clip.antiAlias,
+                  child: Column(
+                    children: [
+                      ListTile(
+                        //leading: Icon(Icons.arrow_drop_down_circle),
+                          title: const Text('Kel Talang Aman'),
+                          subtitle: Text(
+                            '1,773 Orang',
+                            style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                          ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            size: 24.0,
+                            color: Colors.blue,
+                          )
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
