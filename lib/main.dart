@@ -4,6 +4,8 @@ import 'package:e_kemuning/Home.dart';
 import 'package:e_kemuning/Pages/stack.dart';
 import 'package:e_kemuning/StackHome.dart';
 import 'package:e_kemuning/Pages/detail_wilayah.dart';
+import 'package:e_kemuning/Pages/splashscreen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const StackHome(),
+      home: const SplashScreen(),
     );
   }
 }

@@ -1,14 +1,15 @@
 import 'package:e_kemuning/Pages/Kelurahan_detail.dart';
+import 'package:e_kemuning/Pages/keterangan.dart';
+import 'package:e_kemuning/Pages/perizinan.dart';
+import 'package:e_kemuning/Pages/profil.dart';
 import 'package:flutter/material.dart';
 
 //import 'package:e_kemuning/Home.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:e_kemuning/Pages/detail_wilayah.dart';
-import 'package:e_kemuning/Pages/kelurahan';
-import 'package:e_kemuning/list_data.dart';
+import 'package:e_kemuning/Style/font_style.dart';
 
-import 'Pages/Lisview_activitiy.dart';
+//import 'Pages/Lisview_activitiy.dart';
 
 class StackHome extends StatelessWidget {
   const StackHome({Key? key}) : super(key: key);
@@ -21,9 +22,9 @@ class StackHome extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
-        title: const Text(
+        title: Text(
           'E-Kemuning',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+          style: mainHeader,
         ),
         backgroundColor: const Color(0XFF0196FF),
         actions: [
@@ -56,7 +57,8 @@ class StackHome extends StatelessWidget {
                   right: 0,
                   left: 0,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 24),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 20, horizontal: 20),
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Column(
@@ -144,14 +146,10 @@ class StackHome extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Row(
-                  children: const [
+                  children: [
                     Text(
                       'Tentang Kemuning',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Poppins',
-                      ),
+                      style: title,
                     ),
                   ],
                 ),
@@ -162,6 +160,56 @@ class StackHome extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
+                      Column(
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const ProfilPage();
+                                  },
+                                ),
+                              );
+                            },
+                            child: Container(
+                              width: 83,
+                              height: 83,
+                              padding: const EdgeInsets.all(21.0),
+                              decoration: BoxDecoration(
+                                color:
+                                    const Color(0xFF0196FF).withOpacity(0.05),
+                                border: Border.all(
+                                    color: const Color(0xFF0196FF),
+                                    width: 0,
+                                    style: BorderStyle.none),
+                                borderRadius: BorderRadius.circular(24),
+                                //color: Colors.transparent,
+                                shape: BoxShape.rectangle,
+                              ),
+                              child: Ink.image(
+                                image: const AssetImage(
+                                    'assets/images/people.png'),
+                                height: 40,
+                                width: 40,
+                                //fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            'Profil',
+                            style: subTitle,
+                          ),
+                        ],
+                      ),
+                      // Akhir Potensi Section
+                      const SizedBox(
+                        width: 16,
+                      ),
                       Column(
                         children: [
                           InkWell(
@@ -187,7 +235,8 @@ class StackHome extends StatelessWidget {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Ink.image(
-                                image: const AssetImage('assets/images/map.png'),
+                                image:
+                                    const AssetImage('assets/images/map.png'),
                                 //fit: BoxFit.fill,
                               ),
                             ),
@@ -195,7 +244,10 @@ class StackHome extends StatelessWidget {
                           const SizedBox(
                             height: 8,
                           ),
-                          const Text('Wilayah'),
+                          Text(
+                            'Wilayah',
+                            style: subTitle,
+                          ),
                         ],
                       ),
                       const SizedBox(
@@ -238,7 +290,10 @@ class StackHome extends StatelessWidget {
                           const SizedBox(
                             height: 8,
                           ),
-                          const Text('Kelurahan'),
+                          Text(
+                            'Kelurahan',
+                            style: subTitle,
+                          ),
                         ],
                       ),
                       const SizedBox(
@@ -264,8 +319,8 @@ class StackHome extends StatelessWidget {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Ink.image(
-                                image:
-                                    const AssetImage('assets/images/status-up.png'),
+                                image: const AssetImage(
+                                    'assets/images/status-up.png'),
                                 height: 40,
                                 width: 40,
                                 //fit: BoxFit.fill,
@@ -275,7 +330,10 @@ class StackHome extends StatelessWidget {
                           const SizedBox(
                             height: 8,
                           ),
-                          const Text('Potensi'),
+                          Text(
+                            'Potensi',
+                            style: subTitle,
+                          ),
                         ],
                       ),
                       const SizedBox(
@@ -301,7 +359,8 @@ class StackHome extends StatelessWidget {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Ink.image(
-                                image: const AssetImage('assets/images/lovely.png'),
+                                image: const AssetImage(
+                                    'assets/images/lovely.png'),
                                 height: 40,
                                 width: 40,
                                 //fit: BoxFit.fill,
@@ -311,44 +370,14 @@ class StackHome extends StatelessWidget {
                           const SizedBox(
                             height: 8,
                           ),
-                          const Text('Program Kasih'),
+                          Text(
+                            'Program Kasih',
+                            style: subTitle,
+                          ),
                         ],
                       ),
                       const SizedBox(
                         width: 16,
-                      ),
-                      Column(
-                        children: [
-                          InkWell(
-                            onTap: () {},
-                            child: Container(
-                              width: 83,
-                              height: 83,
-                              padding: const EdgeInsets.all(21.0),
-                              decoration: BoxDecoration(
-                                color:
-                                    const Color(0xFF0196FF).withOpacity(0.05),
-                                border: Border.all(
-                                    color: const Color(0xFF0196FF),
-                                    width: 0,
-                                    style: BorderStyle.none),
-                                borderRadius: BorderRadius.circular(24),
-                                //color: Colors.transparent,
-                                shape: BoxShape.rectangle,
-                              ),
-                              child: Ink.image(
-                                image: const AssetImage('assets/images/people.png'),
-                                height: 40,
-                                width: 40,
-                                //fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          const Text('Tim Kecamatan'),
-                        ],
                       ),
                     ],
                   ),
@@ -364,20 +393,16 @@ class StackHome extends StatelessWidget {
               children: <Widget>[
                 Row(
                   children: [
-                    const Text(
+                    Text(
                       'Layanan Publik',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Poppins',
-                      ),
+                      style: title,
                     ),
                     const SizedBox(
                       width: 8,
                     ),
                     Container(
-                      padding:
-                          const EdgeInsets.only(top: 2, right: 6, bottom: 2, left: 6),
+                      padding: const EdgeInsets.only(
+                          top: 2, right: 6, bottom: 2, left: 6),
                       decoration: BoxDecoration(
                         color: Colors.green,
                         borderRadius: BorderRadius.circular(24),
@@ -408,6 +433,90 @@ class StackHome extends StatelessWidget {
                       Column(
                         children: [
                           InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const PerizinanPage(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              width: 83,
+                              height: 83,
+                              padding: const EdgeInsets.all(21),
+                              decoration: BoxDecoration(
+                                color:
+                                    const Color(0xFF0196FF).withOpacity(0.05),
+                                border: Border.all(
+                                    color: const Color(0xFF0196FF),
+                                    width: 0,
+                                    style: BorderStyle.none),
+                                borderRadius: BorderRadius.circular(24),
+                                //color: Colors.transparent,
+                                shape: BoxShape.rectangle,
+                              ),
+                              child: Ink.image(
+                                image: const AssetImage(
+                                    'assets/images/note-2.png'),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          const Text('Perizinan'),
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      Column(
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const KeteranganPage(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              width: 83,
+                              height: 83,
+                              padding: const EdgeInsets.all(21),
+                              decoration: BoxDecoration(
+                                color:
+                                    const Color(0xFF0196FF).withOpacity(0.05),
+                                border: Border.all(
+                                    color: const Color(0xFF0196FF),
+                                    width: 0,
+                                    style: BorderStyle.none),
+                                borderRadius: BorderRadius.circular(24),
+                                //color: Colors.transparent,
+                                shape: BoxShape.rectangle,
+                              ),
+                              child: Ink.image(
+                                image: const AssetImage(
+                                    'assets/images/shield-tick.png'),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          const Text('Keterangan'),
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      Column(
+                        children: [
+                          InkWell(
                             onTap: () {},
                             child: Container(
                               width: 83,
@@ -425,7 +534,8 @@ class StackHome extends StatelessWidget {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Ink.image(
-                                image: const AssetImage('assets/images/alarm.png'),
+                                image:
+                                    const AssetImage('assets/images/alarm.png'),
                                 fit: BoxFit.fill,
                               ),
                             ),
@@ -459,76 +569,8 @@ class StackHome extends StatelessWidget {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Ink.image(
-                                image: const AssetImage('assets/images/note-2.png'),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          const Text('Persuratan'),
-                        ],
-                      ),
-                      const SizedBox(
-                        width: 16,
-                      ),
-                      Column(
-                        children: [
-                          InkWell(
-                            onTap: () {},
-                            child: Container(
-                              width: 83,
-                              height: 83,
-                              padding: const EdgeInsets.all(21),
-                              decoration: BoxDecoration(
-                                color:
-                                    const Color(0xFF0196FF).withOpacity(0.05),
-                                border: Border.all(
-                                    color: const Color(0xFF0196FF),
-                                    width: 0,
-                                    style: BorderStyle.none),
-                                borderRadius: BorderRadius.circular(24),
-                                //color: Colors.transparent,
-                                shape: BoxShape.rectangle,
-                              ),
-                              child: Ink.image(
                                 image:
-                                    const AssetImage('assets/images/shield-tick.png'),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          const Text('Peizinan'),
-                        ],
-                      ),
-                      const SizedBox(
-                        width: 16,
-                      ),
-                      Column(
-                        children: [
-                          InkWell(
-                            onTap: () {},
-                            child: Container(
-                              width: 83,
-                              height: 83,
-                              padding: const EdgeInsets.all(21),
-                              decoration: BoxDecoration(
-                                color:
-                                    const Color(0xFF0196FF).withOpacity(0.05),
-                                border: Border.all(
-                                    color: const Color(0xFF0196FF),
-                                    width: 0,
-                                    style: BorderStyle.none),
-                                borderRadius: BorderRadius.circular(24),
-                                //color: Colors.transparent,
-                                shape: BoxShape.rectangle,
-                              ),
-                              child: Ink.image(
-                                image: const AssetImage('assets/images/medal.png'),
+                                    const AssetImage('assets/images/medal.png'),
                                 fit: BoxFit.fill,
                               ),
                             ),
@@ -545,7 +587,9 @@ class StackHome extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 24.0,),
+          const SizedBox(
+            height: 24.0,
+          ),
           const Divider(
             height: 16,
             thickness: 10,
@@ -623,17 +667,17 @@ class StackHome extends StatelessWidget {
                               const Text('Polisi'),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 16,
                           ),
                           Column(
                             children: [
                               InkWell(
                                 onTap: () async {
-                                  final _call = 'tel:$_phoneNumber';
-                                  final _text = 'sms:$_phoneNumber';
-                                  if (await canLaunch(_call)) {
-                                    await launch(_call);
+                                  final call = 'tel:$_phoneNumber';
+                                  final text = 'sms:$_phoneNumber';
+                                  if (await canLaunch(call)) {
+                                    await launch(call);
                                   }
                                 },
                                 child: Container(
@@ -652,7 +696,7 @@ class StackHome extends StatelessWidget {
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Ink.image(
-                                    image: AssetImage(
+                                    image: const AssetImage(
                                         'assets/images/call-calling.png'),
                                     fit: BoxFit.fill,
                                   ),
@@ -823,7 +867,9 @@ class StackHome extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 24.0,),
+                      SizedBox(
+                        height: 24.0,
+                      ),
                     ],
                   ),
                 ),
@@ -837,154 +883,7 @@ class StackHome extends StatelessWidget {
             endIndent: 0,
             color: Color(0XFFF6F6F6),
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 26,
-              right: 24,
-              bottom: 0,
-              left: 24,
-            ),
-            child: Column(
-              children: <Widget>[
-                Row(
-                  children: [
-                    Text(
-                      'UMKM',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 16,
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Container(
-                        child: InkWell(
-                          onTap: () {},
-                          child: Ink.image(
-                            image: AssetImage('assets/images/Kerajinan.png'),
-                            height: 150,
-                            width: 180,
-                            fit: BoxFit.cover,
-                            child: Align(
-                              alignment: Alignment.bottomLeft,
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Text(
-                                  'Kerajinan',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 16,
-                      ),
-                      Container(
-                        child: InkWell(
-                          onTap: () {},
-                          child: Ink.image(
-                            image: AssetImage('assets/images/Kuliner.png'),
-                            height: 150,
-                            width: 180,
-                            fit: BoxFit.cover,
-                            child: Align(
-                              alignment: Alignment.bottomLeft,
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Text(
-                                  'Kuliner',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 16,
-                      ),
-                      Container(
-                        child: InkWell(
-                          onTap: () {},
-                          child: Ink.image(
-                            image: AssetImage('assets/images/fashion.png'),
-                            height: 150,
-                            width: 180,
-                            fit: BoxFit.cover,
-                            child: Align(
-                              alignment: Alignment.bottomLeft,
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: const Text(
-                                  'Fashion',
-                                  textAlign: TextAlign.center,
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 16,
-                      ),
-                      Container(
-                        child: InkWell(
-                          onTap: () {},
-                          child: Ink.image(
-                            image: AssetImage('assets/images/argi.png'),
-                            height: 150,
-                            width: 180,
-                            fit: BoxFit.cover,
-                            child: Align(
-                              alignment: Alignment.bottomLeft,
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: const Text(
-                                  'Agribisnis',
-                                  textAlign: TextAlign.center,
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          // SizedBox(height: 0,),
+          //Pendidikan
           Padding(
             padding: const EdgeInsets.only(
               top: 16,
@@ -1159,6 +1058,8 @@ class StackHome extends StatelessWidget {
               ],
             ),
           ),
+          //Akhir Pendidikan
+          //Darurat
           Padding(
             padding: const EdgeInsets.only(
               top: 16,
@@ -1306,6 +1207,158 @@ class StackHome extends StatelessWidget {
               ],
             ),
           ),
+          //Akhir Darurat
+          //UMKM
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 26,
+              right: 24,
+              bottom: 0,
+              left: 24,
+            ),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: [
+                    Text(
+                      'UMKM',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/Kerajinan.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  'Kerajinan',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/Kuliner.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  'Kuliner',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/fashion.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: const Text(
+                                  'Fashion',
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Ink.image(
+                            image: AssetImage('assets/images/argi.png'),
+                            height: 150,
+                            width: 180,
+                            fit: BoxFit.cover,
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: const Text(
+                                  'Agribisnis',
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          //Akhir UMKM
+
+          //Pelatihan
           Padding(
             padding: const EdgeInsets.only(
               top: 16,
@@ -1425,6 +1478,7 @@ class StackHome extends StatelessWidget {
               ],
             ),
           ),
+          //Akhir Pelatihan
         ],
       ),
     );
