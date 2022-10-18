@@ -25,82 +25,9 @@ class KelArio extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Container(
-                //   decoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(10.0),
-                //   ),
-                //   padding: EdgeInsets.only(left: 24.0,right: 24.0),
-                //   child: Ink.image(
-                //     image: AssetImage('assets/images/bg.png'),
-                //     height: MediaQuery.of(context).size.height /7,
-                //     // fit: BoxFit.contain,
-                //     child: Align(
-                //       alignment: Alignment.bottomLeft,
-                //       child: Padding(
-                //         padding: const EdgeInsets.only(top: 16.0,left: 16.0),
-                //         child: Column(
-                //           crossAxisAlignment: CrossAxisAlignment.start,
-                //           children: [
-                //             Text(
-                //               'Kel Ario Kemuning',
-                //               textAlign: TextAlign.start,
-                //               style: TextStyle(
-                //                 fontSize: 24,
-                //                 fontWeight: FontWeight.bold,
-                //                 color: Colors.white,
-                //               ),
-                //             ),
-                //             SizedBox(height: 8,),
-                //             Text(
-                //               'Kode Wilayah : 16.71.09.1002',
-                //               textAlign: TextAlign.start,
-                //               style: TextStyle(
-                //                 fontSize: 12,
-                //                 fontWeight: FontWeight.normal,
-                //                 color: Colors.white,
-                //               ),
-                //             ),
-                //
-                //           ],
-                //         ),
-                //       ),
-                //     ),
-                //   ),
-                // ),
-                // Container(
-                //     //width: 200,
-                //     padding: EdgeInsets.only(left: 16.0, right: 16.0),
-                //     //color: Colors.red,
-                //     child: ClipRRect(
-                //       borderRadius: BorderRadius.circular(90.0),
-                //       child: Ink.image(
-                //         fit: BoxFit.cover,
-                //         image: AssetImage('assets/images/bg.png'),
-                //         height: MediaQuery.of(context).size.height / 7,
-                //         child: InkWell(
-                //           onTap: () {},
-                //           child: Stack(
-                //             children: <Widget>[
-                //               Container(
-                //                 decoration: BoxDecoration(
-                //                   borderRadius: BorderRadius.circular(26.0),
-                //                 ),
-                //               ),
-                //               Align(
-                //                 alignment: Alignment.topLeft,
-                //                 child: Padding(
-                //                   padding: EdgeInsets.all(16),
-                //                   child: Text('dog.name,'),
-                //                 ),
-                //               ),
-                //             ],
-                //           ),
-                //         ),
-                //       ),
-                //     )),
                 Container(
                   padding: const EdgeInsets.only(left: 24.0, right: 24.0),
-                  height: MediaQuery.of(context).size.height / 7,
+                  height: MediaQuery.of(context).size.height/6,
                   child: Ink(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8.0),

@@ -1,8 +1,10 @@
 import 'package:e_kemuning/Models/nonperizinan.dart';
 import 'package:e_kemuning/Models/perizinan.dart';
+import 'package:e_kemuning/Models/profildivisi.dart';
 import 'package:e_kemuning/Pages/perizinan_detail.dart';
 import 'package:e_kemuning/StackHome.dart';
 import 'package:e_kemuning/Themes/theme.dart';
+import 'package:e_kemuning/Widgets/card_divisi.dart';
 import 'package:e_kemuning/Widgets/card_nonperizinan.dart';
 import 'package:e_kemuning/Widgets/card_perizinan.dart';
 import 'package:flutter/material.dart';
@@ -100,169 +102,92 @@ class ProfilPage extends StatelessWidget {
               ),
               Column(
                 children: [
-                  Card(
-                    elevation: 0.5,
-                    clipBehavior: Clip.antiAlias,
-                    child: Column(
-                      children: [
-                        ListTile(
-                          //leading: Icon(Icons.arrow_drop_down_circle),
-                            title: const Text('Tiana George'),
-                            subtitle: Text(
-                              'Divisi Tata Pemerintahan',
-                              style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                            ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    elevation: 0.5,
-                    clipBehavior: Clip.antiAlias,
-                    child: Column(
-                      children: [
-                        ListTile(
-                            onTap: (){},
-                            //leading: Icon(Icons.arrow_drop_down_circle),
-                            title: const Text('Marley Aminoff'),
-                            subtitle: Text(
-                              'Devisi Kesejahteraan Rakyat',
-                              style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                            ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    elevation: 0.5,
-                    clipBehavior: Clip.antiAlias,
-                    child: Column(
-                      children: [
-                        ListTile(
-                          //leading: Icon(Icons.arrow_drop_down_circle),
-                            title: const Text('Jordyn Carder'),
-                            subtitle: Text(
-                              'Divisi Hukum dan Perizinan',
-                              style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                            ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    elevation: 0.5,
-                    clipBehavior: Clip.antiAlias,
-                    child: Column(
-                      children: [
-                        ListTile(
-                          //leading: Icon(Icons.arrow_drop_down_circle),
-                            title: const Text('Alena Carder'),
-                            subtitle: Text(
-                              'Divisi Perekonomian',
-                              style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                            ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    elevation: 0.5,
-                    clipBehavior: Clip.antiAlias,
-                    child: Column(
-                      children: [
-                        ListTile(
-                          //leading: Icon(Icons.arrow_drop_down_circle),
-                            title: const Text('Kierra Schleifer'),
-                            subtitle: Text(
-                              'Divisi Administrasi dan Keuangan',
-                              style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                            ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    elevation: 0.5,
-                    clipBehavior: Clip.antiAlias,
-                    child: Column(
-                      children: [
-                        ListTile(
-                          //leading: Icon(Icons.arrow_drop_down_circle),
-                            title: const Text('Allison Baptista'),
-                            subtitle: Text(
-                              'Divisi Hukum dan Perizinan',
-                              style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                            ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    elevation: 0.5,
-                    clipBehavior: Clip.antiAlias,
-                    child: Column(
-                      children: [
-                        ListTile(
-                          //leading: Icon(Icons.arrow_drop_down_circle),
-                            title: const Text('Kaiya Workman'),
-                            subtitle: Text(
-                              'Divisi Administrasi dan Keuangan',
-                              style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                            ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    elevation: 0.5,
-                    clipBehavior: Clip.antiAlias,
-                    child: Column(
-                      children: [
-                        ListTile(
-                          //leading: Icon(Icons.arrow_drop_down_circle),
-                            title: const Text('Ann Donin'),
-                            subtitle: Text(
-                              'Divisi Hukum dan Perizinan',
-                              style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                            ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    elevation: 0.5,
-                    clipBehavior: Clip.antiAlias,
-                    child: Column(
-                      children: [
-                        ListTile(
-                          //leading: Icon(Icons.arrow_drop_down_circle),
-                            title: const Text('Erin Siphron'),
-                            subtitle: Text(
-                              'Devisi Kesejahteraan Rakyat',
-                              style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                            ),
-
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    elevation: 0.5,
-                    clipBehavior: Clip.antiAlias,
-                    child: Column(
-                      children: [
-                        ListTile(
-                          //leading: Icon(Icons.arrow_drop_down_circle),
-                            title: const Text('Adison Philips'),
-                            subtitle: Text(
-                              'Divisi Tata Pemerintahan',
-                              style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                            ),
-
-                        ),
-                      ],
-                    ),
-                  ),
+                  CardDivisi(ProfilDivisi(id: 1, primaryText: 'hhh', secondText: 'hhh',),),
+                  // Card(
+                  //   elevation: 0.5,
+                  //   clipBehavior: Clip.antiAlias,
+                  //   child: Column(
+                  //     children: [
+                  //       ListTile(
+                  //           onTap: (){},
+                  //           //leading: Icon(Icons.arrow_drop_down_circle),
+                  //           title: const Text('Devisi Kesejahteraan Rakyat'),
+                  //           subtitle: Text(
+                  //             '10 orang',
+                  //             style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  //           ),
+                  //           trailing: const Icon(
+                  //             Icons.arrow_forward_ios_outlined,
+                  //             size: 24.0,
+                  //             color: Colors.blue,
+                  //           )
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                  // Card(
+                  //   elevation: 0.5,
+                  //   clipBehavior: Clip.antiAlias,
+                  //   child: Column(
+                  //     children: [
+                  //       ListTile(
+                  //         //leading: Icon(Icons.arrow_drop_down_circle),
+                  //           title: const Text('Divisi Hukum dan Perizinan'),
+                  //           subtitle: Text(
+                  //             '20 orang',
+                  //             style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  //           ),
+                  //           trailing: const Icon(
+                  //             Icons.arrow_forward_ios_outlined,
+                  //             size: 24.0,
+                  //             color: Colors.blue,
+                  //           )
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                  // Card(
+                  //   elevation: 0.5,
+                  //   clipBehavior: Clip.antiAlias,
+                  //   child: Column(
+                  //     children: [
+                  //       ListTile(
+                  //         //leading: Icon(Icons.arrow_drop_down_circle),
+                  //           title: const Text('Divisi Perekonomian'),
+                  //           subtitle: Text(
+                  //             '12 orang',
+                  //             style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  //           ),
+                  //           trailing: const Icon(
+                  //             Icons.arrow_forward_ios_outlined,
+                  //             size: 24.0,
+                  //             color: Colors.blue,
+                  //           )
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                  // Card(
+                  //   elevation: 0.5,
+                  //   clipBehavior: Clip.antiAlias,
+                  //   child: Column(
+                  //     children: [
+                  //       ListTile(
+                  //         //leading: Icon(Icons.arrow_drop_down_circle),
+                  //           title: const Text('Divisi Administrasi dan Keuangan'),
+                  //           subtitle: Text(
+                  //             '2 orang',
+                  //             style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                  //           ),
+                  //           trailing: const Icon(
+                  //             Icons.arrow_forward_ios_outlined,
+                  //             size: 24.0,
+                  //             color: Colors.blue,
+                  //           )
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                 ],
               ),
             ],
